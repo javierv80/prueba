@@ -1,0 +1,34 @@
+<% provide(:title, 'Ver Pregunta') %>
+
+<h1>
+	<%= @question.user.username.capitalize %> pregunta:
+</h1>
+
+<p>
+	<%= @question.body %>
+</p>
+	
+<div id="Respuestas">
+	<h2>Respuestas</h2>
+
+	<% if @question.answers.any? %>
+		<ul>
+			<%= render @question.answers %>
+		</ul>	
+	<% else %>
+		<p>Esta pregunta no tiene respuestas todavia</p>
+    <% end %>
+</div>
+
+<div id="post-answer">
+	<h2>Responde a la pregunta</h2>
+
+	<% if logged_in? %>
+		<%= render 'answers/answer_form' %>
+	<% else %>
+		<p>Debes estar logueado para responder preguntas</p>
+	<% end %>
+
+</div><!-- end post-answer -->
+
+<p><%= link_to "Volver", questions_path%></p>

@@ -1,0 +1,5 @@
+<%= form_tag(search_path, method: 'get') do %>
+	<%= text_field_tag :keyword, 'Buscar', size: '20', id: 'keyword' %>
+
+	<%= submit_tag 'Buscar'%>
+<% end %>
