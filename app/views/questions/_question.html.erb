@@ -1,5 +1,5 @@
 <li>
-	<%= link_to truncate(question.body, length: 35), question %> por <%= question.user.username.capitalize %>
+	<%= link_to truncate(question.body, length: 70), question %> por <%= question.user.username.capitalize %>
 
 	<% if on_your_questions_page? %>
 	 <%= display_solved(question) %>- <%= link_to "Editar", edit_question_path(question) %>
